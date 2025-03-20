@@ -28,14 +28,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 📌 JPA (데이터베이스 연동)
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'mysql:mysql-connector-java' // 📌 MySQL 드라이버
-	//runtimeOnly 'com.h2database:h2'
+	//오라클
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	//implementation group: 'com.oracle.database.jdbc', name: 'ojdbc6', version: '11.2.0.4'
+	//runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+    implementation 'com.oracle.database.jdbc:ojdbc11:21.9.0.0' // 최신 버전 사용 가능
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+    
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	
-	
-  //  implementation 'com.h2database:h2' // 📌 H2 데이터베이스 (테스트용)
+
     implementation 'org.projectlombok:lombok' // 📌 Lombok (코드 간결화)
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
